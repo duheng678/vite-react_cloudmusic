@@ -5,7 +5,10 @@ import { shallowEqual } from 'react-redux'
 import { increment } from './store/features/counterSlice'
 import HomeClass from './views/demo/class'
 const App = memo(() => {
-  const count = useAppSelector(state => state.counter.value, shallowEqual)
+  const { count, direction } = useAppSelector(
+    state => ({ count: state.counter.value, direction: state.counter.direction }),
+    shallowEqual,
+  )
   const dispatch = useAppDispatch()
   return (
     <div>
