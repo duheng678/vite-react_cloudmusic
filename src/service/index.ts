@@ -5,8 +5,6 @@ const request = new MyRequest({
   timeout: TIMEOUT,
   interceptors: {
     requestInterceptor: config => {
-      console.log('请求成功拦截')
-
       return config
     },
     requestInterceptorCatch: err => err,

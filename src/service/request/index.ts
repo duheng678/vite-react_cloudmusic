@@ -2,7 +2,7 @@ import axios from 'axios'
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 interface MyInterceptors<T = AxiosResponse> {
   requestInterceptor?: (
-    config: InternalAxiosRequestConfig
+    config: InternalAxiosRequestConfig,
   ) => InternalAxiosRequestConfig | Promise<InternalAxiosRequestConfig>
   requestInterceptorCatch?: (error: any) => any
   responseInterceptor?: (res: T) => T
@@ -18,32 +18,28 @@ class MyRequest {
     this.instance = axios.create(config)
     this.instance.interceptors.request.use(
       config => {
-        console.log('请求拦截器')
         return config
       },
       error => {
-        console.log('请求拦截器错误')
         return Promise.reject(error)
-      }
+      },
     )
     this.instance.interceptors.response.use(
       response => {
-        console.log('响应拦截器')
         return response.data
       },
       error => {
-        console.log('响应拦截器错误')
         return Promise.reject(error)
-      }
+      },
     )
     if (config.interceptors) {
       this.instance.interceptors.request.use(
         config.interceptors.requestInterceptor,
-        config.interceptors.requestInterceptorCatch
+        config.interceptors.requestInterceptorCatch,
       )
       this.instance.interceptors.response.use(
         config.interceptors.responseInterceptor,
-        config.interceptors.responseInterceptorCatch
+        config.interceptors.responseInterceptorCatch,
       )
     }
   }
