@@ -36,6 +36,7 @@
     "globals": "^16.5.0",
     "less": "^4.5.1",
     "prettier": "^3.7.4",
+    "styled-components": "^6.1.19",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "unocss": "^66.5.10",

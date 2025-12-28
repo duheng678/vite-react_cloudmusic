@@ -8,8 +8,31 @@ body {
     'Segoe UI',
     sans-serif;
   background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
 .page-title {
   color: @primary-color;
+}
+
+// App 容器样式
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  background-color: #f5f5f5;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #666;
+  font-size: 14px;
 }

@@ -1,0 +1,242 @@
+// 网易云音乐主题色
+@netease-red: #C20C0C;
+@netease-red-hover: #A00A0A;
+@netease-red-light: #E20C0C;
+
+.app-header {
+  background-color: @netease-red;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+// Logo 区域
+.app-header-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+// 导航链接区域
+.app-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  height: 100%;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: white;
+    }
+  }
+}
+
+// 右侧操作区域
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+// 搜索框
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 32px;
+  width: 200px;
+  transition: width 0.3s;
+
+  &:focus-within {
+    width: 240px;
+  }
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-size: 13px;
+  color: #333;
+  background: transparent;
+
+  &::placeholder {
+    color: #999;
+  }
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: @netease-red;
+  }
+}
+
+// 创作者中心按钮
+.creator-center-btn {
+  padding: 6px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  background-color: transparent;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// 登录按钮
+.login-btn {
+  padding: 6px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  background-color: transparent;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// 响应式设计
+@media (max-width: 1200px) {
+  .app-header-content {
+    gap: 20px;
+  }
+
+  .nav-link {
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .search-box {
+    width: 160px;
+
+    &:focus-within {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    height: 60px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .app-header-nav {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .search-box {
+    width: 120px;
+  }
+
+  .creator-center-btn,
+  .login-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
