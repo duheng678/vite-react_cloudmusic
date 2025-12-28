@@ -5,12 +5,12 @@ import AppFooter from '@/components/app-footer'
 
 const App = memo(() => {
   return (
-    <div className="app-container">
+    <>
       {/* 顶部导航栏 */}
       <AppHeader />
 
       {/* 主要内容区域 */}
-      <main className="app-main">
+      <main className="app-main w-full h-1200px!">
         <Suspense fallback={<div className="loading">Loading...</div>}>
           <Outlet />
         </Suspense>
@@ -18,7 +18,7 @@ const App = memo(() => {
 
       {/* 底部导航栏 */}
       <AppFooter />
-    </div>
+    </>
   )
 })
 
